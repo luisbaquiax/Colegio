@@ -91,7 +91,7 @@
             z-index: 1;
         }
     </style>
-        <!-- del login -->
+    <!-- del login -->
     <link rel="stylesheet" href="../assets/css/login/main.css"/>
 
     <!-- Custom styles for this template -->
@@ -208,235 +208,15 @@
 </svg>
 
 <main>
-    <div
-            class="d-flex flex-column flex-shrink-0 p-3 bg-light"
-            style="width: 315px"
-    >
-        <a
-                href="/"
-                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
-        >
-            <i class="fa-solid fa-school"></i>
-            <span class="fs-4 mx-2">Colegio Harvard</span>
-        </a>
-        <hr/>
-        <ul class="nav nav-pills flex-column mb-auto">
+    <div class="container-fluid content-main mt-5">
+        <div class="container-login100-form-btn mb-3">
             <a
-                    href="#submenu3"
-                    data-bs-toggle="collapse"
-                    class="nav-link link-dark menu-item"
-            >
-                <span class="material-symbols-outlined">manage_accounts</span>
-                Gestionar estudiantes
-            </a>
-            <ul
-                    class="collapse nav flex-column ms-1"
-                    id="submenu3"
-                    data-bs-parent="#menu"
-            >
-                <li class="w-100">
-                    <a
-                            href="#"
-                            class="nav-link link-dark"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                    >
-                        <span class="material-symbols-outlined"> add_circle </span>
-                        Agregar estudiante</a
-                    >
-                    <!-- Modal -->
-                    <div
-                            class="modal fade"
-                            id="exampleModal"
-                            tabindex="-1"
-                            aria-labelledby="exampleModalLabel"
-                            aria-hidden="true"
-                    >
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button
-                                            type="button"
-                                            class="btn-close"
-                                            data-bs-dismiss="modal"
-                                            aria-label="Close"
-                                    ></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form class="validate-form" action="../controller/ControllerStudents.php?action=insert" method="post">
-                                        <h1 class="login100-form-title mb-3">
-                                            <strong>Registro de nuevo estudiante</strong>
-                                        </h1>
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <div
-                                                        class="wrap-input100 validate-input"
-                                                >
-                                                    <input
-                                                            class="input100"
-                                                            type="text"
-                                                            name="nombre1"
-                                                            id="name1"
-                                                    />
-                                                    <span class="focus-input100"></span>
-                                                    <span class="label-input100">Primer nombre</span>
-                                                </div>
-
-                                                <div
-                                                        class="wrap-input100 validate-input"
-                                                >
-                                                    <input
-                                                            class="input100"
-                                                            type="text"
-                                                            name="nombre2"
-                                                            id="name2"
-                                                    />
-                                                    <span class="focus-input100"></span>
-                                                    <span class="label-input100">Segundo nombre</span>
-                                                </div>
-
-                                                <div
-                                                        class="wrap-input100 validate-input"
-                                                >
-                                                    <input
-                                                            class="input100"
-                                                            type="text"
-                                                            name="apellido1"
-                                                            id="apellido1"
-                                                    />
-                                                    <span class="focus-input100"></span>
-                                                    <span class="label-input100"
-                                                    >Primer apellido</span
-                                                    >
-                                                </div>
-
-                                                <div
-                                                        class="wrap-input100 validate-input"
-                                                >
-                                                    <input
-                                                            class="input100"
-                                                            type="text"
-                                                            name="apellido2"
-                                                            id="apellido2"
-                                                    />
-                                                    <span class="focus-input100"></span>
-                                                    <span class="label-input100"
-                                                    >Segundo apellido</span
-                                                    >
-                                                </div>
-                                            </div>
-
-                                            <div class="col">
-                                                <div
-                                                        class="wrap-input100 validate-input"
-                                                >
-                                                    <input
-                                                            class="input100"
-                                                            type="text"
-                                                            name="direccion"
-                                                            id="direccion"
-                                                    />
-                                                    <span class="focus-input100"></span>
-                                                    <span class="label-input100">Dirección</span>
-                                                </div>
-
-                                                <div
-                                                        class="wrap-input100 validate-input"
-                                                >
-                                                    <input
-                                                            class="input100"
-                                                            type="text"
-                                                            name="telefono"
-                                                            id="telefono"
-                                                            minlength="8"
-                                                            maxlength="8"
-                                                    />
-                                                    <span class="focus-input100"></span>
-                                                    <span class="label-input100">Teléfono</span>
-                                                </div>
-
-                                                <div
-                                                        class="wrap-input100 validate-input"
-                                                        data-validate="Correo valido, ejemplo: ex@abc.xyz"
-                                                >
-                                                    <input
-                                                            class="input100"
-                                                            type="text"
-                                                            name="correo"
-                                                            id="correo"
-                                                    />
-                                                    <span class="focus-input100"></span>
-                                                    <span class="label-input100">Correo eléctronico</span>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="container-login100-form-btn mb-3">
-                                            <button
-                                                    class="login100-form-btn"
-                                                    style="font-size: 25px"
-                                            >
-                                                Guardar cambios
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end modal -->
-                </li>
-
-                <li class="w-100">
-                    <a
-                            href="#"
-                            class="nav-link link-dark"
-                            onclick="loadPage('students')"
-                    >
-                        <span class="material-symbols-outlined">group</span>
-                        Estudiantes</a
-                    >
-                </li>
-            </ul>
-
-        </ul>
-        <hr/>
-        <div class="dropdown">
-            <a
-                    href="#"
-                    class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-                    id="dropdownUser2"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-            >
-                <img
-                        src="../assets/img/user.png"
-                        alt=""
-                        width="32"
-                        height="32"
-                        class="rounded-circle me-2"
-                />
-            </a>
-            <ul
-                    class="dropdown-menu text-small shadow"
-                    aria-labelledby="dropdownUser2"
-            >
-                <li><a class="dropdown-item" href="#">Configuración</a></li>
-                <li><a class="dropdown-item" href="#">Mi perfil</a></li>
-                <li>
-                    <hr class="dropdown-divider"/>
-                </li>
-                <li><a class="dropdown-item" href="../index.php">Salir</a></li>
-            </ul>
+                    href="home.php"
+                    class="login100-form-btn"
+                    style="font-size: 25px; text-decoration: none"
+            ><span class="material-symbols-outlined">arrow_back</span> Regresar a la página principal</a>
         </div>
-    </div>
-
-    <div class="b-example-divider"></div>
-
-    <div class="container-fluid content-main">
-        <div id="content"></div>
+        <?php include 'edit-student.php'; ?>
     </div>
 </main>
 <!--  -->
@@ -461,9 +241,11 @@
 <script src="../assets/js/Login.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

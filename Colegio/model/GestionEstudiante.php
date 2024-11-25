@@ -70,6 +70,9 @@ class GestionEstudiante{
         }
     }
 
+    /**
+     * @throws Exception
+     */
     public function update($estudiante)
     {
         $stm = $this->conn->prepare(self::UPDATE);

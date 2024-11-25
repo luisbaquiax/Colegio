@@ -1,15 +1,9 @@
 <?php
-session_start();
-require_once __DIR__ . "/../model/GestionEstudiante.php";
-require_once __DIR__ . "/../model/Estudiante.php";
-$gestorStudents = new GestionEstudiante();
-$students = $gestorStudents->listStudents();
-
-if (isset($_SESSION['student'])) {
-    $student = $_SESSION['student'];
-} else {
-    echo "<h1>Error: No se encontró información del estudiante.</h1>";
-}
+require_once '../model/Estudiante.php';
+require_once '../model/GestionEstudiante.php';
+$gestor = new GestionEstudiante();
+$id = $_GET['id'];
+$student = $gestor->search($id);
 ?>
 <div class="container-fluid mt-3 ">
     <div class="card box-shadow">
@@ -17,8 +11,12 @@ if (isset($_SESSION['student'])) {
             <h1 class="text-center nav-link"><strong>Editar estudiante</strong></h1>
         </div>
         <div class="card-body">
-            <form class="validate-form" action="#" method="get">
+            <form class="validate-form"
+                  action="../controller/ControllerStudents.php?action=update"
+                  method="post"
+                  onclick="return showConfirm('¿Desea guardar los cambios?')">
                 <div class="row">
+                    <input type="hidden" value="<?= $student->getId() ?>" name="id">
                     <div class="col">
                         <div
                                 class="wrap-input100 validate-input"
@@ -26,7 +24,7 @@ if (isset($_SESSION['student'])) {
                             <input
                                     class="input100"
                                     type="text"
-                                    name="name1"
+                                    name="nombre1"
                                     id="name1"
                                     placeholder="Primer nombre"
                                     value="<?= $student->getNombre1() ?>"
@@ -40,9 +38,10 @@ if (isset($_SESSION['student'])) {
                             <input
                                     class="input100"
                                     type="text"
-                                    name="name2"
+                                    name="nombre2"
                                     id="name2"
                                     placeholder="Segundo nombre"
+                                    value="<?= $student->getNombre2() ?>"
                             />
                             <span class="focus-input100"></span>
                         </div>
@@ -56,6 +55,7 @@ if (isset($_SESSION['student'])) {
                                     name="apellido1"
                                     id="apellido1"
                                     placeholder="Primer apellido"
+                                    value="<?= $student->getApellido1() ?>"
                             />
                             <span class="focus-input100"></span>
                         </div>
@@ -68,6 +68,7 @@ if (isset($_SESSION['student'])) {
                                     name="apellido2"
                                     id="apellido2"
                                     placeholder="Segundo apellido"
+                                    value="<?= $student->getApellido2() ?>"
                             />
                             <span class="focus-input100"></span>
                         </div>
@@ -83,6 +84,7 @@ if (isset($_SESSION['student'])) {
                                     name="direccion"
                                     id="direccion"
                                     placeholder="direccion"
+                                    value="<?= $student->getDireccion() ?>"
                             />
                             <span class="focus-input100"></span>
                         </div>
@@ -98,6 +100,7 @@ if (isset($_SESSION['student'])) {
                                     minlength="8"
                                     maxlength="8"
                                     placeholder="teléfono"
+                                    value="<?= $student->getTelefono() ?>"
                             />
                             <span class="focus-input100"></span>
                         </div>
@@ -112,6 +115,7 @@ if (isset($_SESSION['student'])) {
                                     name="correo"
                                     id="correo"
                                     placeholder="Correo electrónico"
+                                    value="<?= $student->getCorreo() ?>"
                             />
                             <span class="focus-input100"></span>
                         </div>
@@ -131,5 +135,3 @@ if (isset($_SESSION['student'])) {
         </div>
     </div>
 </div>
-
-<script src="../assets/vendor/jquery/jquery-3.2.1.min.js"></script>

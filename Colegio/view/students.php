@@ -34,7 +34,7 @@ $students = $gestorStudents->listStudents();
                             <th><?= $student->getCorreo() ?></th>
                             <td>
                                 <a
-                                        href="../controller/ControllerStudents.php?action=editStudent&&id=<?= $student->getId() ?>"
+                                        href="view-edit-student.php?id=<?= $student->getId() ?>"
                                         class="btn btn-dark btn-sm"
                                 ><i class="fa-regular fa-pen-to-square"></i></a>
                                 <a
