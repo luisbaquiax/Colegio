@@ -14,7 +14,7 @@ $student = $gestor->search($id);
             <form class="validate-form"
                   action="../controller/ControllerStudents.php?action=update"
                   method="post"
-                  onclick="return showConfirm('¿Desea guardar los cambios?')">
+                  onauxclick="return showConfirm('¿Desea guardar los cambios?')">
                 <div class="row">
                     <input type="hidden" value="<?= $student->getId() ?>" name="id">
                     <div class="col">
